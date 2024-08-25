@@ -4,7 +4,8 @@
 
 
 
-
-
+	<select id="getData" resultType="java.util.Map">
+	SELECT * FROM TEST
+	</select>
 
 </mapper>

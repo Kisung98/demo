@@ -2,12 +2,11 @@ package com.example.demo.mapper;
 
 import java.util.List;
 import java.util.Map;
-
 import org.apache.ibatis.annotations.Mapper;
+
 @Mapper
 public interface TestMapper {
 
-    List<Map<String, Object>> test(Map<String, Object> pMaps) throws Exception;
-
+    List<Map<String, Object>> getData();
 
 }
