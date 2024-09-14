@@ -1,1 +1,1 @@
-{"resources":{"Scripts/Script.sql":{"default-datasource":"mariaDB-191875b3209-73ac986297c6f9fe","default-catalog":"mysql"}}}
+{"resources":{"Scripts/Script-1.sql":{"default-datasource":"mariaDB-191ac459ba2-23d070d3f44aaf5b","default-catalog":"mysql"},"Scripts/Script-2.sql":{"default-datasource":"mariaDB-191ac459ba2-23d070d3f44aaf5b","default-catalog":"mysql"},"Scripts/Script.sql":{"default-datasource":"mariaDB-191875b3209-73ac986297c6f9fe","default-catalog":"mysql"}}}

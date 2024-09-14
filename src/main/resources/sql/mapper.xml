@@ -3,9 +3,8 @@
 <mapper namespace="com.example.demo.mapper.TestMapper">
 
 
-
 	<select id="getData" resultType="java.util.Map">
-	SELECT * FROM TEST
+	   SELECT * FROM KOREAN1
 	</select>
 
 </mapper>

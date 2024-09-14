@@ -17,6 +17,24 @@
 				"closeIdleConnection": true,
 				"auth-model": "native"
 			}
+		},
+		"mariaDB-191ac459ba2-23d070d3f44aaf5b": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "mysql 2",
+			"save-password": true,
+			"show-system-objects": true,
+			"configuration": {
+				"host": "122.46.14.246",
+				"port": "3306",
+				"database": "mysql",
+				"url": "jdbc:mariadb://122.46.14.246:3306/mysql",
+				"configurationType": "MANUAL",
+				"home": "mysql_client",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
 		}
 	},
 	"connection-types": {

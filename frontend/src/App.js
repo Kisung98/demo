@@ -1,12 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
 
-function App() {
+const App = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .post("http://122.46.14.246:8080/getData", {
+        param1: undefined,
+        param2: null,
+        param3: "파라미터",
+      })
+      .then((res) => {
+        console.log(res);
+        setData(res.data);
+      });
+  }, []);
   return (
-    <div className="App">
-    <h1>안녕하세요 변경함 씨발롬아 씨발 영미야 사랑해</h1>
+    <div>
+      <div>배포확인</div>
+      {data.map((value, index) => {
+        return (
+          <div>
+            <div>{index + 1}번째</div>
+            <div>{value.id}</div>
+            <div>{value.content}</div>
+            <hr />
+          </div>
+        );
+      })}
     </div>
   );
-}
+};
 
 export default App;
