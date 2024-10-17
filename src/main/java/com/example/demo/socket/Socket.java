@@ -19,14 +19,14 @@ public class Socket extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         System.err.println("메세지 전송");
         System.err.println("세션접속수 " + sessions.size());
-        System.err.println("메세지 " + message.getPayload());
+        System.err.println("메세지 " + message);
         System.err.println("");
 
         for (int i = 0; i < sessions.size(); i++) {
             if (session.isOpen()) {
-                sessions.get(i).sendMessage(new TextMessage(message.getPayload()));
+                sessions.get(i)
+                        .sendMessage(new TextMessage("접속수 " + sessions.size() + "\n" + "메세지 " + message.getPayload()));
             }
-
         }
     }
 
