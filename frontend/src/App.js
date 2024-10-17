@@ -1,34 +1,49 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const [input, setInput] = useState("");
+  const [socket, setSocket] = useState(null);
+
   useEffect(() => {
-    axios
-      .post("http://122.46.14.246:8080/getData", {
-        param1: undefined,
-        param2: null,
-        param3: "파라미터",
-      })
-      .then((res) => {
-        console.log(res);
-        setData(res.data);
-      });
+    const ws = new WebSocket("ws://localhost:8080/ws");
+
+    ws.onopen = () => {
+      console.log("WebSocket 연결 성공");
+    };
+
+    ws.onmessage = (message) => {
+      console.log("서버로부터 받은 메시지:", message.data);
+    };
+
+    ws.onclose = () => {
+      console.log("WebSocket 연결이 종료되었습니다.");
+    };
+
+    setSocket(ws);
+
+    return () => {
+      ws.close();
+    };
   }, []);
+
   return (
     <div>
-      <div>배포확인</div>
-      {data.map((value, index) => {
-        return (
-          <div>
-            <div>{index + 1}번째</div>
-            <div>{value.id}</div>
-            <div>{value.content}</div>
-            <hr />
-          </div>
-        );
-      })}
+      <div>소켓 확인</div>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
+      />
+      <button
+        onClick={() => {
+          socket.send(input);
+          setInput("");
+        }}
+      >
+        전송
+      </button>
     </div>
   );
 };
