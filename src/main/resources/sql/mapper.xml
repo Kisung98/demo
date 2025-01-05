@@ -3,8 +3,12 @@
 <mapper namespace="com.example.demo.mapper.TestMapper">
 
 
-	<select id="getData" resultType="java.util.Map">
-	   SELECT * FROM KOREAN1
-	</select>
+	<insert id="getData">
+	   INSERT INTO SYS.TEST
+	   VALUES
+	   <foreach collection="list" item="item" separator=",">
+	   (#{item.value1}, #{item.value2})
+	   </foreach>
+	</insert>
 
 </mapper>

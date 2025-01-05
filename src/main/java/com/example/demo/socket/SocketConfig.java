@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 @EnableWebSocket
 @RequiredArgsConstructor
-public class Config implements WebSocketConfigurer {
+public class SocketConfig implements WebSocketConfigurer {
 
     private final WebSocketHandler webSocketHandler;
 

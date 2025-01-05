@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface TestMapper {
 
-    List<Map<String, Object>> getData();
+    int getData(Map<String, Object> pMap);
 
 }

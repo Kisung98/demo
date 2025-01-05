@@ -1,12 +1,9 @@
 package com.example.demo.controller;
 
-import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.service.TestService;
@@ -18,8 +15,13 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-    @PostMapping("/getData")
-    public List<Map<String, Object>> name(@RequestBody Map<String, Object> pMap) {
+    @PostMapping("/testData")
+    public int test() {
+        return 1; 
+    }
+    
+    @PostMapping("/insertData")
+    public int insert() {
         return testService.getData();
     }
 }
