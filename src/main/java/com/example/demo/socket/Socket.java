@@ -30,8 +30,8 @@ public class Socket extends TextWebSocketHandler {
         String sendMessage = messageMap.get("message").toString();
         List<String> userList = (List<String>)messageMap.get("array"); 
         
-        for (int i = 0; i < userList.size(); i++) {
-            sessions.get(userList.get(i)).sendMessage(new TextMessage(sendMessage));
+        for (String user : userList) {
+            sessions.get(user).sendMessage(new TextMessage(sendMessage));
         }
 
     }
